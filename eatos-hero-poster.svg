@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#050505"/>
+<circle cx="800" cy="440" r="210" fill="none" stroke="#eee" stroke-width="3" opacity=".35"/>
+<circle cx="800" cy="440" r="115" fill="#eee"/>
+<circle cx="800" cy="440" r="72" fill="#222"/>
+<path d="M300 650 Q800 380 1300 650" fill="none" stroke="#eee" stroke-width="4" opacity=".6"/>
+<text x="800" y="120" text-anchor="middle" fill="#f4f1ea" font-family="Arial,sans-serif" font-size="42" font-weight="700" letter-spacing="8">EATO'S</text>
+<text x="800" y="810" text-anchor="middle" fill="#999" font-family="Arial,sans-serif" font-size="18" letter-spacing="7">FEED THE IMAGINATION</text>
+</svg>
