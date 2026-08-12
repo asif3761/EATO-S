@@ -123,6 +123,56 @@ footer a:hover{color:#fff}
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
 }
+
+/* ===== EATO'S V2 FOOD EXPERIENCE ===== */
+.food-intro{padding:13vw 5vw 6vw;display:grid;grid-template-columns:1fr 2fr;gap:5vw}
+.food-intro h2{font:600 clamp(3rem,7vw,8rem)/.82 "Space Grotesk";letter-spacing:-.075em;margin:0}
+.food-intro p{font:500 clamp(1.5rem,3vw,3.5rem)/1.02 "Space Grotesk";letter-spacing:-.05em;margin:0;max-width:900px}
+.menu-nav{display:flex;gap:9px;flex-wrap:wrap;margin:42px 0 18px}
+.menu-filter{background:transparent;border:1px solid #333;color:#aaa;padding:10px 14px;text-transform:uppercase;letter-spacing:.12em;font-size:9px;cursor:none;transition:.4s var(--ease)}
+.menu-filter:hover,.menu-filter.active{background:#eee;color:#050505;border-color:#eee}
+.food-menu{padding:2vw 5vw 13vw}
+.food-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}
+.food-item{position:relative;border-bottom:1px solid var(--line);padding:35px 0;min-height:190px;overflow:hidden;transition:padding .55s var(--ease),background .55s var(--ease),transform .2s var(--ease)}
+.food-item:nth-child(even){padding-left:4vw;border-left:1px solid var(--line)}
+.food-item:hover{background:#0c0c0c;padding-left:20px;padding-right:20px}
+.food-no{font-size:9px;color:#777;letter-spacing:.18em}
+.food-name{font:600 clamp(1.8rem,3.5vw,4rem)/.9 "Space Grotesk";letter-spacing:-.06em;margin:13px 0 9px}
+.food-desc{font-size:11px;line-height:1.5;color:#999;max-width:390px}
+.food-price{position:absolute;right:0;top:36px;font:600 17px "Space Grotesk"}
+.food-art{position:absolute;right:-90px;bottom:-100px;width:220px;height:220px;border-radius:50%;opacity:0;transform:scale(.65) rotate(-20deg);transition:opacity .6s var(--ease),transform .8s var(--ease)}
+.food-item:hover .food-art{opacity:.72;transform:scale(1) rotate(0)}
+.art-burger{background:radial-gradient(ellipse at 50% 22%,#eee 0 12%,#777 13% 18%,#222 19% 28%,#ddd 29% 34%,#111 35% 46%,#aaa 47% 51%,#111 52%)}
+.art-steak{background:radial-gradient(ellipse,#d8d0c5 0 8%,#5b554e 9% 22%,#eee 23% 27%,#181818 28% 42%,#777 43% 55%,#080808 56%)}
+.art-grill{background:repeating-linear-gradient(65deg,#ddd 0 7px,#222 7px 16px)}
+.art-cheese{background:radial-gradient(circle at 35% 35%,#eee 0 8%,transparent 9%),radial-gradient(circle at 65% 60%,#aaa 0 12%,transparent 13%),linear-gradient(145deg,#eee,#222)}
+.art-mac{background:repeating-radial-gradient(ellipse at 45% 50%,#eee 0 6px,#555 7px 15px,#111 16px 22px)}
+.menu-note{font-size:9px;color:#777;letter-spacing:.14em;text-transform:uppercase;margin-top:28px}
+.book-panel{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:8vw 5vw;display:grid;grid-template-columns:1.2fr 1fr;gap:7vw}
+.book-panel h2{font:600 clamp(3rem,6vw,7rem)/.82 "Space Grotesk";letter-spacing:-.075em;margin:0}
+.book-panel p{color:#999;line-height:1.6;font-size:12px;max-width:500px}
+.booking-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.booking-form input,.booking-form select,.booking-form textarea{width:100%;background:#0a0a0a;border:1px solid #292929;color:#eee;padding:15px;outline:none;font:11px "DM Sans"}
+.booking-form textarea{grid-column:1/-1;min-height:100px}
+.booking-form button{grid-column:1/-1;background:#eee;color:#050505;border:0;padding:17px;text-transform:uppercase;letter-spacing:.16em;font-size:9px;cursor:none}
+.food-item.hidden{display:none}
+.art-layer{position:fixed;z-index:0;inset:0;pointer-events:none;overflow:hidden;opacity:.18}
+.art-layer span{position:absolute;border:1px solid rgba(255,255,255,.2);border-radius:50%;transition:transform .8s var(--ease)}
+.art-layer span:nth-child(1){width:38vw;height:38vw;left:-15vw;top:45vh}
+.art-layer span:nth-child(2){width:18vw;height:18vw;right:-5vw;top:120vh}
+.art-layer span:nth-child(3){width:25vw;height:25vw;left:60vw;top:215vh}
+.hero-orbit{position:absolute;z-index:4;right:7vw;top:27%;width:190px;height:190px;pointer-events:none;transform-style:preserve-3d}
+.hero-orbit .orb{position:absolute;inset:0;border:1px solid rgba(255,255,255,.28);border-radius:50%;transform:rotateX(68deg) rotateY(18deg);animation:orbit 12s linear infinite}
+.hero-orbit .orb:nth-child(2){transform:rotateX(72deg) rotateY(-30deg) scale(.7);animation-duration:9s}
+.hero-orbit .orb:nth-child(3){transform:rotateX(20deg) rotateY(70deg) scale(.45);animation-duration:6s}
+.hero-orbit:after{content:"E";position:absolute;inset:0;display:grid;place-items:center;font:700 62px "Space Grotesk"}
+@keyframes orbit{to{rotate:360deg}}
+@media(max-width:760px){
+ .food-intro{display:block;padding:24vw 6vw 10vw}.food-intro h2{margin-bottom:42px}
+ .food-menu{padding:5vw 6vw 22vw}.food-grid{display:block}.food-item:nth-child(even){border-left:0;padding-left:0}
+ .book-panel{display:block;padding:22vw 6vw}.book-panel h2{margin-bottom:42px}.booking-form{grid-template-columns:1fr}.booking-form textarea,.booking-form button{grid-column:auto}
+ .hero-orbit{width:100px;height:100px;right:6vw;top:25%}.hero-orbit:after{font-size:35px}
+}
 </style>
 
 <meta name="robots" content="index, follow">
@@ -137,7 +187,7 @@ footer a:hover{color:#fff}
 <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
 
 </head>
-<body>
+<body><div class='art-layer' aria-hidden='true'><span></span><span></span><span></span></div>
 <div class="noise"></div><div class="cursor"></div><div class="cursor-dot"></div>
 
 <header>
@@ -154,7 +204,7 @@ footer a:hover{color:#fff}
     <source src="assets/video/eatos-hero.mp4" type="video/mp4">
   </video>
   <canvas class="hero-canvas" id="heroCanvas"></canvas>
-  <div class="scroll-cue">Scroll / taste</div>
+  <div class="hero-orbit" id="heroOrbit"><span class="orb"></span><span class="orb"></span><span class="orb"></span></div><div class="scroll-cue">Scroll / taste</div>
   <div class="hero-content">
     <div class="eyebrow">Independent food studio · Dhaka / everywhere</div>
     <h1>FEED THE<br>IMAGINATION.</h1>
@@ -183,6 +233,41 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
+
+<section class="food-intro reveal" id="menu">
+ <div><div class="kicker">02 / The kitchen</div></div>
+ <div>
+  <h2>BUILT TO<br>BE CRAVED.</h2>
+  <p>From smashed edges to slow fire, EATO'S turns familiar comfort food into something worth staring at.</p>
+  <div class="menu-nav">
+   <button class="menu-filter active" data-filter="all">All</button><button class="menu-filter" data-filter="burger">Burgers</button><button class="menu-filter" data-filter="steak">Steaks</button><button class="menu-filter" data-filter="grill">Grills</button><button class="menu-filter" data-filter="cheese">Cheese</button><button class="menu-filter" data-filter="mac">Mac & Cheese</button>
+  </div>
+ </div>
+</section>
+<section class="food-menu reveal">
+ <div class="food-grid">
+  <article class="food-item" data-cat="burger"><span class="food-no">01 / BURGER</span><div class="food-name">BLACKOUT BURGER</div><div class="food-desc">Grilled beef patty, smoked cheese, house sauce, crisp lettuce and toasted bun.</div><div class="food-price">৳ 340</div><div class="food-art art-burger"></div></article>
+  <article class="food-item" data-cat="burger"><span class="food-no">02 / BURGER</span><div class="food-name">DOUBLE EATO'S</div><div class="food-desc">Two smashed beef patties, double cheese, pickles and signature sauce.</div><div class="food-price">৳ 470</div><div class="food-art art-burger"></div></article>
+  <article class="food-item" data-cat="steak"><span class="food-no">03 / STEAK</span><div class="food-name">FIRE-CUT SIRLOIN</div><div class="food-desc">Grilled sirloin with pepper jus, fries and seasonal vegetables.</div><div class="food-price">৳ 790</div><div class="food-art art-steak"></div></article>
+  <article class="food-item" data-cat="steak"><span class="food-no">04 / STEAK</span><div class="food-name">RIB-EYE / 250G</div><div class="food-desc">Charred rib-eye, garlic butter, mash and roasted greens.</div><div class="food-price">৳ 980</div><div class="food-art art-steak"></div></article>
+  <article class="food-item" data-cat="grill"><span class="food-no">05 / GRILL</span><div class="food-name">CHARRED CHICKEN</div><div class="food-desc">Half grilled chicken, smoky glaze, fries and fresh slaw.</div><div class="food-price">৳ 440</div><div class="food-art art-grill"></div></article>
+  <article class="food-item" data-cat="grill"><span class="food-no">06 / GRILL</span><div class="food-name">SMOKE & SPICE</div><div class="food-desc">Mixed grill of chicken, beef strips, grilled vegetables and house dip.</div><div class="food-price">৳ 590</div><div class="food-art art-grill"></div></article>
+  <article class="food-item" data-cat="cheese"><span class="food-no">07 / CHEESE</span><div class="food-name">MELT THEORY</div><div class="food-desc">Three-cheese grilled sandwich with caramelised onion and herbs.</div><div class="food-price">৳ 290</div><div class="food-art art-cheese"></div></article>
+  <article class="food-item" data-cat="cheese"><span class="food-no">08 / CHEESE</span><div class="food-name">CHEESE FRIES</div><div class="food-desc">Crisp fries, molten cheese sauce, smoked seasoning and jalapeño.</div><div class="food-price">৳ 220</div><div class="food-art art-cheese"></div></article>
+  <article class="food-item" data-cat="mac"><span class="food-no">09 / MAC</span><div class="food-name">MIDNIGHT MAC</div><div class="food-desc">Creamy baked mac & cheese finished with smoked cheddar crust.</div><div class="food-price">৳ 330</div><div class="food-art art-mac"></div></article>
+  <article class="food-item" data-cat="mac"><span class="food-no">10 / MAC</span><div class="food-name">TRIPLE CHEESE MAC</div><div class="food-desc">Three-cheese sauce, toasted crumbs, black pepper and slow-baked finish.</div><div class="food-price">৳ 390</div><div class="food-art art-mac"></div></article>
+ </div>
+ <div class="menu-note">Indicative Dhaka pricing; adjust to your real portions and food costs.</div>
+</section>
+<section class="book-panel reveal" id="booking">
+ <div><div class="kicker">03 / Reserve the table</div><h2>MAKE A<br>NIGHT OF IT.</h2><p>Pick a date and let the kitchen handle the rest. The form below opens a pre-filled WhatsApp booking request.</p></div>
+ <form class="booking-form" id="bookingForm">
+  <input name="name" required placeholder="Your name"><input name="phone" required placeholder="Phone / WhatsApp">
+  <input name="date" required type="date"><select name="guests" required><option value="">Guests</option><option>1–2</option><option>3–4</option><option>5–8</option><option>9+</option></select>
+  <select name="time" required><option value="">Preferred time</option><option>12:00–15:00</option><option>18:00–20:00</option><option>20:00–22:30</option></select>
+  <textarea name="note" placeholder="Anything we should know?"></textarea><button type="submit">Request a table ↗</button>
+ </form>
+</section>
 <section class="section work reveal" id="work">
   <div class="work-head"><h2>THE INDEX</h2><span class="kicker">Selected EATO'S worlds</span></div>
   <a class="project magnetic" data-magnetic href="#contact"><div class="project-name">AFTER DARK</div><div class="project-desc">Late-night plates, hard shadows and a menu designed for the hour after midnight.</div><div class="explore">Explore ↗</div></a>
@@ -282,6 +367,25 @@ const manifesto=document.querySelector('.manifesto');
 manifesto.addEventListener('mousemove',e=>{
   const r=manifesto.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
   document.getElementById('manifestoBg').style.transform=`scale(1.1) translate(${x*28}px,${y*28}px)`;
+});
+
+document.querySelectorAll('.menu-filter').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.menu-filter').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+ const f=btn.dataset.filter; document.querySelectorAll('.food-item').forEach(x=>x.classList.toggle('hidden',f!=='all'&&x.dataset.cat!==f));
+}));
+addEventListener('mousemove',e=>{
+ const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+ const o=document.getElementById('heroOrbit'); if(o)o.style.transform=`translate(${x*32}px,${y*32}px) rotateX(${y*-10}deg) rotateY(${x*12}deg)`;
+ document.querySelectorAll('.art-layer span').forEach((s,i)=>s.style.transform=`translate(${x*(20+i*12)}px,${y*(15+i*9)}px)`);
+});
+document.querySelectorAll('.food-item').forEach(el=>{
+ el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=e.clientX/r.width-r.left/r.width,y=e.clientY/r.height-r.top/r.height;el.style.transform=`perspective(900px) rotateY(${x*2}deg) rotateX(${y*-2}deg)`});
+ el.addEventListener('mouseleave',()=>el.style.transform='');
+});
+document.getElementById('bookingForm')?.addEventListener('submit',e=>{
+ e.preventDefault();const d=new FormData(e.target);
+ const text=`EATO'S TABLE REQUEST\nName: ${d.get('name')}\nPhone: ${d.get('phone')}\nDate: ${d.get('date')}\nGuests: ${d.get('guests')}\nTime: ${d.get('time')}\nNote: ${d.get('note')||'—'}`;
+ window.open('https://wa.me/8801951467502?text='+encodeURIComponent(text),'_blank');
 });
 </script>
 </body>
