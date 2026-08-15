@@ -18,6 +18,35 @@
   const fmt = (n) => "\u09f3" + n.toLocaleString("en-US");
 
   /* ---------------------------------------------------------
+     Sound toggle — governs both the voice lines and the crunch
+     transition effect, persisted, off by default
+  --------------------------------------------------------- */
+  const SOUND_KEY = "eatos-sound";
+  const soundToggle = document.getElementById("sound-toggle");
+  function setSound(on){
+    if(window.EatosVoice) window.EatosVoice.setEnabled(on);
+    if(window.EatosAudio) window.EatosAudio.setEnabled(on);
+    if(soundToggle){
+      soundToggle.setAttribute("aria-pressed", String(on));
+      soundToggle.querySelector(".sound-icon").textContent = on ? "\u266a" : "\u25d4";
+    }
+    localStorage.setItem(SOUND_KEY, on ? "1" : "0");
+  }
+  soundToggle?.addEventListener("click", () => {
+    setSound(!(window.EatosVoice && window.EatosVoice.isEnabled()));
+  });
+  setSound(localStorage.getItem(SOUND_KEY) === "1");
+
+  // Browsers block audio/speech before the visitor interacts with the
+  // page at all — so the welcome line fires on that first tap/click,
+  // not instantly on load, if sound is already turned on.
+  function tryWelcome(){
+    if(window.EatosVoice && window.EatosVoice.isEnabled()) window.EatosVoice.sayWelcome();
+  }
+  window.addEventListener("pointerdown", tryWelcome, { once: true });
+  tryWelcome();
+
+  /* ---------------------------------------------------------
      Shared fragments
   --------------------------------------------------------- */
   function marqueeHTML(words, alt){
@@ -272,6 +301,9 @@
     if(path === "/menu") initMenu();
     if(path === "/book") initReserveForm();
 
+    if(path === "/menu" && window.EatosVoice) window.EatosVoice.sayMenu();
+    if(path === "/book" && window.EatosVoice) window.EatosVoice.sayBook();
+
     initReveal();
     window.scrollTo(0,0);
   }
@@ -285,6 +317,8 @@
   const totalSweep = (BAR_DUR + BAR_STAGGER * (BAR_COUNT - 1)) * 1000;
 
   function transitionTo(path){
+    if(window.EatosAudio) window.EatosAudio.crunchBite();
+
     if(reduceMotion){
       render(path);
       return;
