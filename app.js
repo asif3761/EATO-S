@@ -317,11 +317,7 @@
   const totalSweep = (BAR_DUR + BAR_STAGGER * (BAR_COUNT - 1)) * 1000;
 
   function transitionTo(path){
-    if(window.EatosAudio){
-      window.EatosAudio.crunchBite();
-      window.EatosAudio.sizzle();
-    }
-    fireBurst();
+    if(window.EatosAudio) window.EatosAudio.crunchBite();
 
     if(reduceMotion){
       render(path);
@@ -347,31 +343,6 @@
         bars.forEach(bar => { bar.style.transformOrigin = "top"; });
       }, totalSweep + 80);
     }, totalSweep + 60);
-  }
-
-  /* ---------------------------------------------------------
-     Fire ember burst — spawned at the start of every transition,
-     scattered across the shutter line
-  --------------------------------------------------------- */
-  function fireBurst(){
-    if(reduceMotion) return;
-    const count = 16;
-    const y = window.innerHeight / 2 + (Math.random() * 200 - 100);
-    for(let i = 0; i < count; i++){
-      const el = document.createElement("div");
-      el.className = "flame-particle";
-      const x = (window.innerWidth / count) * i + Math.random() * 40;
-      const size = 8 + Math.random() * 16;
-      el.style.left = x + "px";
-      el.style.top = (y + (Math.random() * 120 - 60)) + "px";
-      el.style.width = size + "px";
-      el.style.height = size + "px";
-      el.style.setProperty("--rise", -(90 + Math.random() * 120) + "px");
-      el.style.setProperty("--spin", (Math.random() * 90 - 45) + "deg");
-      el.style.setProperty("--dur", (0.6 + Math.random() * 0.5) + "s");
-      document.body.appendChild(el);
-      setTimeout(() => el.remove(), 1200);
-    }
   }
 
   function goTo(path){
