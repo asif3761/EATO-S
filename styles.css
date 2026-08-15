@@ -55,16 +55,17 @@ p{ margin:0; }
 
 /* ============================== header ============================== */
 .site-header{
-  position:fixed; top:0; left:0; right:0; z-index:30;
+  position:fixed; top:0; left:0; right:0; z-index:40;
   display:flex; align-items:center; justify-content:space-between;
-  padding:22px clamp(20px,4vw,56px);
-  mix-blend-mode:difference;
+  padding:20px clamp(20px,4vw,56px);
+  background:linear-gradient(to bottom, rgba(10,10,10,.92), rgba(10,10,10,.75) 70%, transparent);
+  backdrop-filter:blur(8px);
 }
 .wordmark{ font-family:var(--display); font-size:1.3rem; letter-spacing:.04em; }
 .main-nav{ display:flex; gap:clamp(18px,3vw,36px); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
 .main-nav a{ position:relative; transition:opacity .3s var(--ease); }
 .main-nav a:hover{ opacity:.6; }
-.nav-tag{ font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--paper-dim); mix-blend-mode:normal; }
+.nav-tag{ font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--paper-dim); }
 
 /* ============================== hero ============================== */
 .hero{
@@ -259,9 +260,8 @@ p{ margin:0; }
    ============================================================ */
 
 /* header adjustments for multi-page + mobile toggle */
-.site-header{ z-index:40; }
 .main-nav a.active{ opacity:.5; }
-.header-actions{ display:flex; align-items:center; gap:16px; mix-blend-mode:normal; }
+.header-actions{ display:flex; align-items:center; gap:16px; }
 .btn-primary.small{ padding:10px 20px; font-size:.8rem; border-radius:30px; }
 
 .menu-toggle{
@@ -328,7 +328,7 @@ p{ margin:0; }
 .shutter-bars span:last-child{ border-right:none; }
 
 /* ---------------- page top spacing (non-hero pages) ---------------- */
-.page-top{ padding-top:150px; }
+.page-top{ padding-top:190px; }
 .subsection{ margin-top:0; }
 
 /* ---------------- home: today's picks ---------------- */
@@ -355,9 +355,9 @@ p{ margin:0; }
 .locations-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1px; background:var(--hairline); border:1px solid var(--hairline); }
 .location-card{ background:var(--void); padding:30px 26px; display:flex; flex-direction:column; gap:12px; transition:background .3s var(--ease); }
 .location-card:hover{ background:var(--panel); }
-.location-top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
-.location-top h3{ font-family:var(--display); font-size:1.15rem; text-transform:uppercase; }
-.location-status{ font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; padding:4px 10px; border-radius:20px; border:1px solid var(--hairline); }
+.location-top{ display:flex; align-items:flex-start; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+.location-top h3{ font-family:var(--display); font-size:1.1rem; text-transform:uppercase; line-height:1.25; flex:1 1 auto; min-width:0; }
+.location-status{ flex:0 0 auto; white-space:nowrap; font-size:.64rem; letter-spacing:.06em; text-transform:uppercase; padding:5px 11px; border-radius:20px; border:1px solid var(--hairline); }
 .location-status.open{ color:var(--accent-bright); border-color:var(--accent-dim); }
 .location-status.soon{ color:var(--paper-dim); }
 .location-city{ color:var(--paper-dim); font-size:.85rem; }
@@ -418,4 +418,50 @@ p{ margin:0; }
 @media (prefers-reduced-motion: reduce){
   .shutter-bars span{ transition:none; }
   .mobile-nav, .mobile-nav a{ transition:none; }
+}
+
+/* ============================================================
+   EATO'S — v3: header/layout fixes, sitewide ambient food glow
+   ============================================================ */
+
+#ambient-glow{
+  position:fixed; inset:0; z-index:1; pointer-events:none; overflow:hidden;
+}
+.glow{
+  position:absolute; border-radius:50%; filter:blur(60px);
+  opacity:.16; will-change:transform;
+}
+.glow-a{
+  width:52vw; height:52vw; max-width:640px; max-height:640px;
+  top:-14%; left:-10%;
+  background:radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  animation:glowDriftA 26s ease-in-out infinite alternate;
+}
+.glow-b{
+  width:42vw; height:42vw; max-width:520px; max-height:520px;
+  bottom:-12%; right:-8%;
+  background:radial-gradient(circle, var(--accent-bright) 0%, transparent 70%);
+  opacity:.12;
+  animation:glowDriftB 32s ease-in-out infinite alternate;
+}
+.glow-c{
+  width:34vw; height:34vw; max-width:420px; max-height:420px;
+  top:40%; left:60%;
+  background:radial-gradient(circle, #ffcf6b 0%, transparent 70%);
+  opacity:.08;
+  animation:glowDriftC 22s ease-in-out infinite alternate;
+}
+@keyframes glowDriftA{ to{ transform:translate(6vw, 8vh) scale(1.12); } }
+@keyframes glowDriftB{ to{ transform:translate(-8vw, -6vh) scale(1.18); } }
+@keyframes glowDriftC{ to{ transform:translate(-5vw, 5vh) scale(1.08); } }
+
+/* keep in-flow page content above the fixed glow layer — the header,
+   mobile nav, transition overlay and toasts already manage their own
+   position:fixed + z-index, so they're left out of this rule */
+main, .site-footer{
+  position:relative; z-index:3;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .glow{ animation:none !important; }
 }
