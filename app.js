@@ -14,7 +14,7 @@
   const yearEl = document.getElementById("year");
   if(yearEl) yearEl.textContent = new Date().getFullYear();
 
-  const WHATSAPP_NUMBER = "8800000000000"; // TODO: replace with your real number
+  const WHATSAPP_NUMBER = "01951467502"; // TODO: replace with your real number
   const fmt = (n) => "\u09f3" + n.toLocaleString("en-US");
 
   /* ---------------------------------------------------------
@@ -248,11 +248,11 @@
         <div class="contact-grid">
           <a class="contact-card reveal" href="https://wa.me/${WHATSAPP_NUMBER}" target="_blank" rel="noopener">
             <span class="contact-label">WhatsApp</span>
-            <span class="contact-value">Message the team</span>
+            <span class="contact-value">Message the team(01951467502) </span>
           </a>
           <a class="contact-card reveal" href="mailto:hello@eatos.example" target="_blank" rel="noopener">
             <span class="contact-label">Email</span>
-            <span class="contact-value">hello@eatos.example</span>
+            <span class="contact-value">asifuzzaman3761@gmail.com</span>
           </a>
           <a class="contact-card reveal" href="mailto:careers@eatos.example" target="_blank" rel="noopener">
             <span class="contact-label">Careers</span>
