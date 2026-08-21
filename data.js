@@ -44,19 +44,19 @@ window.EATOS_MENU = {
    details before publishing.
    ============================================================ */
 window.EATOS_LOCATIONS = [
-  { id: "gulshan", area: "Gulshan 2", city: "Dhaka", hours: "12:00 PM \u2013 12:00 AM", phone: "+880 1XXX-XXXXXX", status: "Open now" },
-  { id: "banani", area: "Banani", city: "Dhaka", hours: "12:00 PM \u2013 12:00 AM", phone: "+880 1XXX-XXXXXX", status: "Open now" },
-  { id: "dhanmondi", area: "Dhanmondi 27", city: "Dhaka", hours: "1:00 PM \u2013 11:00 PM", phone: "+880 1XXX-XXXXXX", status: "Open now" },
-  { id: "uttara", area: "Uttara, Sector 7", city: "Dhaka", hours: "1:00 PM \u2013 11:00 PM", phone: "+880 1XXX-XXXXXX", status: "Opening soon" },
+  { id: "gulshan", area: "Gulshan 2", city: "Dhaka", hours: "12:00 PM \u2013 12:00 AM", phone: "+880 1951467502", status: "Open now" },
+  { id: "banani", area: "Banani", city: "Dhaka", hours: "12:00 PM \u2013 12:00 AM", phone: "+880 1951467502", status: "Open now" },
+  { id: "dhanmondi", area: "Dhanmondi 27", city: "Dhaka", hours: "1:00 PM \u2013 11:00 PM", phone: "+880 1951467502", status: "Open now" },
+  { id: "uttara", area: "Uttara, Sector 7", city: "Dhaka", hours: "1:00 PM \u2013 11:00 PM", phone: "+880 1951467502", status: "Opening soon" },
 ];
 
 /* ============================================================
    EATO'S — team (placeholder roles, replace with real names/bios)
    ============================================================ */
 window.EATOS_TEAM = [
-  { role: "Founder", name: "[ Founder Name ]", group: "Founders" },
+  { role: "Founder", name: "[ASIF]", group: "Founders" },
   { role: "Co-Founder", name: "[ Co-Founder Name ]", group: "Founders" },
-  { role: "Head Chef", name: "[ Head Chef Name ]", group: "The Kitchen" },
+  { role: "Head Chef", name: "[ Chef ASIF ]", group: "The Kitchen" },
   { role: "Sous Chef", name: "[ Sous Chef Name ]", group: "The Kitchen" },
 ];
 
