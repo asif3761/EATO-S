@@ -250,7 +250,7 @@
             <span class="contact-label">WhatsApp</span>
             <span class="contact-value">Message the team(01951467502) </span>
           </a>
-          <a class="contact-card reveal" href="mailto:hello@eatos.example" target="_blank" rel="noopener">
+          <a class="contact-card reveal" href="mailto:asifuzzaman3761@gmail.com" target="_blank" rel="noopener">
             <span class="contact-label">Email</span>
             <span class="contact-value">asifuzzaman3761@gmail.com</span>
           </a>
